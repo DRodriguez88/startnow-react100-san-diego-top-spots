@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TopSpot from './topspots';
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,10 @@ class App extends Component {
     .then(topspots => this.setState({ topspots }));
   }
 
+  clickHandler(){
+    
+  }
+
   render() {
     return (
       <div className='App bg-primary'>
@@ -22,10 +27,16 @@ class App extends Component {
             <h5>A list of the top 30 places to see in San Diego, California</h5>            
           </div>
         </div>
-        <div className='container mt-5'>
-          <div>
-            <pre className='bg bg-white border border-dark'>{ JSON.stringify(this.state.topspots, null, 2) }</pre>
-          </div>
+        <div className='container mt-3 text-dark'>
+        { 
+          this.state.topspots.map(topspot => (
+            <TopSpot
+              key={topspot.id}
+              name={topspot.name}
+              description={topspot.description}
+              location={topspot.location} />
+          ))
+        }
         </div>
       </div>
     );
