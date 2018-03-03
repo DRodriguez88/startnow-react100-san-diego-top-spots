@@ -14,18 +14,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-      <pre>{ JSON.stringify(this.state.topspots, null, 2) }</pre>
+      <div className='App bg-primary'>
+        <div className='container'>
+          <div className='jumbotron border border-dark bg-white text-dark'>
+            <h1 className='display-4'>San Diego Top Spots</h1>
+            <hr />
+            <h5>A list of the top 30 places to see in San Diego, California</h5>            
+          </div>
+        </div>
         <div className='container mt-5'>
-          <div className='card border border-dark'>
-            <div className='card-body'>
-              <h1>
-                San Diego Top Spots
-              </h1>
-              <h5>
-                A list of the top 30 places to see in San Diego, California
-              </h5>  
-            </div>
+          <div>
+            <pre className='bg bg-white border border-dark'>{ JSON.stringify(this.state.topspots, null, 2) }</pre>
           </div>
         </div>
       </div>
