@@ -13,10 +13,6 @@ class App extends Component {
     .then(topspots => this.setState({ topspots }));
   }
 
-  clickHandler(){
-    
-  }
-
   render() {
     return (
       <div className='App bg-primary'>
